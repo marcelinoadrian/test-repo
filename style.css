@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label, input
+{
+    font-size: 20px;
+    height: 30px;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: 100px auto;
+    border: 1px solid black;
+    padding: 50px;
+}
+
+h1
+{
+    text-align: center;
+    margin-top: 100px;
+}
+
+nav
+{
+    background-color: gainsboro;
+    padding: 10px;
+}
+
+.title
+{
+    color: green;
+}
