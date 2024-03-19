@@ -14,6 +14,21 @@
     include 'dbconnection.php';
     $conn = OpenCon();
 
+    if(!isset($_SESSION['userid']))
+{
+    
+        header("location: ../test-repo/login.php");
+}
+  else 
+    {
+        
+   if($_SESSION['acc_type'] != 'admin')
+    {
+        header("location: ../test-repo/landingpage.php");
+    }
+    }
+    
+
 
 
     if(isset($_GET['delete'])){
@@ -53,7 +68,8 @@ if(isset($_POST['u_submit']))
     ?>
 
     <header>
-        <nav><h2 class="title">CRUD REVIEW</h2></nav>
+        <nav><h2 class="title">CRUD REVIEW</h2>
+    <a href="logout.php">Logout</a></nav>
     </header>
     <h1>Simple Registration Page</h1>
     <div class="container">
