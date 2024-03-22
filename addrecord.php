@@ -10,6 +10,8 @@ if(isset($_POST['submit']))
     $email = $_POST['email'];
 
 
+    
+
     $query = "INSERT INTO `user_data` (`full_name`, `passw`, `address`, `email`, `acc_type`) VALUES ('$fu_name', '$password', '$address', '$email', 'user')";
 
     if(mysqli_query($conn, $query))
@@ -31,6 +33,14 @@ if(isset($_POST['register']))
     $address = $_POST['address'];
     $email = $_POST['email'];
 
+      if(!filter_var($email_add, FILTER_VALIDATE_EMAIL))
+      {
+        header("location: ../test-repo/registration.php?error=invalidemail");
+      }
+      else
+      {
+
+
     $query = "INSERT INTO `user_data` (`full_name`, `passw`, `address`, `email`, `acc_type`) VALUES ('$fu_name', '$password', '$address', '$email', 'user')";
 
     if(mysqli_query($conn, $query))
@@ -43,6 +53,9 @@ if(isset($_POST['register']))
     }
 
      mysqli_close($conn);
+      }
+      
+  
 }
 
 

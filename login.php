@@ -67,12 +67,13 @@ if(isset($_SESSION['userid']))
     <div class="container">
         <form action="" method="POST">
             <label for="i_email">Email: </label>
-            <input type="email" name="i_email" id="i_email">
+            <input type="email" name="i_email" id="i_email" required>
             <label for="i_passw">Password: </label>
-            <input type="password" name="i_passw" id="i_passw">
+            <input type="password" name="i_passw" id="i_passw" required>
             <br>
             <input type="submit" name="login" value="Login">
             <br>
+        
             <a href="registration.php">Don't have an account? Sign-in Instead.</a>
             
         </form>

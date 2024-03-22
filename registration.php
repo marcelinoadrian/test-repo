@@ -15,6 +15,7 @@ if(isset($_SESSION['userid']))
     }    
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +33,26 @@ if(isset($_SESSION['userid']))
     <div class="container">
         <form action="addrecord.php" method="POST">
             <label for="fu-name">Full Name: </label>
-            <input type="text" name="fu_name" id="fu-name">
+            <input type="text" name="fu_name" id="fu-name" required>
             <label for="password">Password: </label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" required>
             <label for="address">Address: </label>
-            <input type="text" name="address" id="address">
+            <input type="text" name="address" id="address" required>
             <label for="email">E-mail: </label>
-            <input type="text" name="email" id="email">
+            <input type="text" name="email" id="email" required>
             <br>
             <input type="submit" name="register">
             <br>
+            <?php
+            if (isset($_GET['error']))
+            {
+                $error = $_GET['error'];
+                if($error === "invalidemail")
+                {
+                    echo '<p id="error">Please enter valid email.</p>';
+                }
+            };
+            ?>
             <a href="login.php">Already have an account? Sign-in Instead.</a>
         </form>
         

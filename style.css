@@ -78,3 +78,8 @@ table
     text-align: center;
     display: inline-block;
 }
+
+#error
+{
+    color: red;
+}
