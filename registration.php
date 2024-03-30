@@ -39,7 +39,7 @@ if(isset($_SESSION['userid']))
             <label for="address">Address: </label>
             <input type="text" name="address" id="address" required>
             <label for="email">E-mail: </label>
-            <input type="text" name="email" id="email" required>
+            <input type="email" name="email" id="email" required>
             <br>
             <input type="submit" name="register">
             <br>
